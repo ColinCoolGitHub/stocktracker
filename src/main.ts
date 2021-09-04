@@ -19,8 +19,9 @@ import '@ionic/vue/css/text-alignment.css';
 import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
+import i18n from './i18n'
 
-const app = createApp(App)
+const app = createApp(App).use(i18n)
     .use(IonicVue)
     .use(router)
     .use(store);
