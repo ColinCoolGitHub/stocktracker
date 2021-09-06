@@ -27,7 +27,7 @@ import {
   IonPage,
 } from "@ionic/vue";
 export default defineComponent({
-  name: "Home",
+  name: "Toolbar",
   props: {
     title: String,
   },

@@ -1,7 +1,8 @@
 <template>
-   <Toolbar title="About">
+   <Toolbar title="Ticker list">
     <template #content>
-      about page!
+      ticker list page!
+      liste des actions ou crypto acheter avec la date, quantité et prix
     </template>
   </Toolbar>
 </template>

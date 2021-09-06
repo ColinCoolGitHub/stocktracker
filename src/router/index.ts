@@ -1,26 +1,31 @@
 import { createRouter, createWebHashHistory } from '@ionic/vue-router';
+import { RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue'
 import PorfolioView from '../views/PorfolioView.vue'
+import About from '../views/About.vue'
+import TickerList from '../views/TickerList.vue'
 
 
-const routes = [
+const routes : Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home
   },
   {
-    path: '/Porfolio',
+    path: '/porfolio',
     name: 'PorfolioView',
     component: PorfolioView
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component:About
+  },
+  {
+    path: '/tickerList',
+    name: 'tickerListView',
+    component:TickerList
   }
 ]
 

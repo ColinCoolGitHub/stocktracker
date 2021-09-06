@@ -7,8 +7,21 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>
+           <ion-item routerLink="/">
           <i slot="start" class="icon ion-md-heart"></i>
+          Home
+        </ion-item>
+        <ion-item routerLink="/about">
+          <i slot="start" class="icon ion-md-heart"></i>
+          About
+        </ion-item>
+         <ion-item routerLink="/tickerList">
+          <i slot="start" class="icon ion-md-heart"></i>
+          Ticker list
+        </ion-item>
+          <ion-item routerLink="/porfolio">
+          <i slot="start" class="icon ion-md-heart"></i>
+          Porfolio
         </ion-item>
       </ion-list>
     </ion-content>
@@ -24,6 +37,8 @@
 import {
   IonContent,
   IonHeader,
+  IonIcon,
+  IonButton,
   IonItem,
   IonList,
   IonMenu,
@@ -42,6 +57,8 @@ export default defineComponent({
     IonMenu,
     IonTitle,
     IonToolbar,
+    IonButton,
+    IonIcon
   },
   methods: {
     openFirst() {
