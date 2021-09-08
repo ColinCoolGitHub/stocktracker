@@ -1,5 +1,6 @@
 {
   "message": "hello i18n !!",
+  "hello":"hello",
   "shared": {
     "selectALocaleBellow": "Select a locale bellow"
   }

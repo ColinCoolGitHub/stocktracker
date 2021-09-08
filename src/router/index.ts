@@ -14,7 +14,7 @@ const routes : Array<RouteRecordRaw> = [
   },
   {
     path: '/porfolio',
-    name: 'PorfolioView',
+    name: 'Porfolio',
     component: PorfolioView
   },
   {
@@ -24,7 +24,7 @@ const routes : Array<RouteRecordRaw> = [
   },
   {
     path: '/tickerList',
-    name: 'tickerListView',
+    name: 'TickerList',
     component:TickerList
   }
 ]

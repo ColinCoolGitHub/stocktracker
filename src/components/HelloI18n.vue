@@ -6,7 +6,7 @@
 <script>
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { LangSwitcher } from "@/components/locale/LangSwitcher.vue";
+import LangSwitcher from "@/components/locale/LangSwitcher.vue";
 
 export default defineComponent({
   name: 'HelloI18n',

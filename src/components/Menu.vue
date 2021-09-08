@@ -7,21 +7,9 @@
     </ion-header>
     <ion-content>
       <ion-list>
-           <ion-item routerLink="/">
-          <i slot="start" class="icon ion-md-heart"></i>
-          Home
-        </ion-item>
-        <ion-item routerLink="/about">
-          <i slot="start" class="icon ion-md-heart"></i>
-          About
-        </ion-item>
-         <ion-item routerLink="/tickerList">
-          <i slot="start" class="icon ion-md-heart"></i>
-          Ticker list
-        </ion-item>
-          <ion-item routerLink="/porfolio">
-          <i slot="start" class="icon ion-md-heart"></i>
-          Porfolio
+           <ion-item v-for="item in menuItems" :color="isItemSelected(item) ? 'primary':''" :key="item.id"  @click="fermerMenu(item)" :routerLink="{name:item.routeName}">
+            <ion-icon :icon="item.icon" />
+          {{item.title}}
         </ion-item>
       </ion-list>
     </ion-content>
@@ -47,7 +35,7 @@ import {
   menuController,
 } from "@ionic/vue";
 import { defineComponent } from "vue";
-
+import { heartOutline } from "ionicons/icons"
 export default defineComponent({
   components: {
     IonContent,
@@ -60,18 +48,49 @@ export default defineComponent({
     IonButton,
     IonIcon
   },
+  data(){
+    return{
+    menuItems:[
+      {
+        id:0,
+        routeName:"Home",
+        title:"Home",
+        icon : heartOutline,
+      },
+      {
+        id:1,
+        routeName:"About",
+        title:"About",
+        icon : heartOutline,
+      },
+          {
+            id:2,
+        routeName:"TickerList",
+        title:"Ticker list",
+        icon : heartOutline,
+      },
+             {
+               id:3,
+        routeName:"Porfolio",
+        title:"Porfolio",
+        icon : heartOutline,
+      },
+      
+    ]
+    }
+  },
+   setup() {
+       return {
+           heartOutline
+       }
+   },
   methods: {
-    openFirst() {
-      menuController.enable(true, "first");
-      menuController.open("first");
+    fermerMenu(){
+      menuController.close("first")
     },
-    openEnd() {
-      menuController.open("end");
-    },
-    openCustom() {
-      menuController.enable(true, "custom");
-      menuController.open("custom");
-    },
+    isItemSelected(item){
+      return item.routeName === this.$route.name;
+    }
   },
 });
 </script>
