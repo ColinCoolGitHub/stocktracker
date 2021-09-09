@@ -1,10 +1,30 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+
+ <ion-app>
+   <Menu></Menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
+
 </template>
+
+
+
+
+<script>
+import Menu from '../src/components/Menu.vue'
+import { 
+   IonApp,
+  IonRouterOutlet,
+
+} from '@ionic/vue';
+export default {
+  components: { Menu, 
+   IonApp,
+  IonRouterOutlet,
+   },
+
+}
+</script>
 
 <style>
 #app {
@@ -14,10 +34,10 @@
   text-align: center;
   color: #2c3e50;
 }
-
+/* 
 #nav {
   padding: 30px;
-}
+} */
 
 #nav a {
   font-weight: bold;
